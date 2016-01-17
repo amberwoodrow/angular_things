@@ -1,4 +1,4 @@
-<label>
-  <input type='checkbox' ng-click='deleteTodo({id: todo._id})'>
-</label>
-<p ng-click='editTodo(todo._id)'>{{todo.text}} {{todo.timestamp}} {{todo._id}}</p>
+<div class="todo-list-item">
+    <input type='checkbox' ng-click='deleteTodo({id: todo._id})'>
+    <span ng-click='editTodo(todo._id)'>{{todo.text}} {{todo.timestamp}} {{todo._id}}</span>
+</div>

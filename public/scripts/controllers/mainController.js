@@ -29,6 +29,8 @@ todo.controller('mainController', function($scope, $http){
         $http.delete('/api/todos/' + id)
             .success(function(data) {
                 $scope.todos = data;
+                event.preventDefault();
+
                 console.log(data);
             })
             .error(function(data) {
@@ -36,16 +38,16 @@ todo.controller('mainController', function($scope, $http){
             });
     };
 
-    $scope.editTodo = function(id) {
-        // click to edit
-        $http.put('/api/todos/' + id)
-            .success(function(data) {
-                $scope.todos = data;
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
+    // $scope.editTodo = function(id) {
+    //     // click to edit
+    //     $http.put('/api/todos/' + id)
+    //         .success(function(data) {
+    //             $scope.todos = data;
+    //             console.log(data);
+    //         })
+    //         .error(function(data) {
+    //             console.log('Error: ' + data);
+    //         });
+    // };
 
 });
